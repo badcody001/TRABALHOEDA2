@@ -140,6 +140,7 @@ No* removerNo(No* raiz, int chave) {
 
     if (raiz == NULL)
         return raiz;
+    
 
     if (chave < raiz->chave) {
 
@@ -215,7 +216,7 @@ No* removerNo(No* raiz, int chave) {
 void procurarNo(No* raiz, int chave, int nivel) {
 
     if (raiz == NULL) {
-        printf("Chave nao encontrada.\n");
+         printf("A arvore esta vazia. Nada para procurar.\n");
         return;
     }
 
@@ -227,10 +228,7 @@ void procurarNo(No* raiz, int chave, int nivel) {
 
         procurarNo(raiz->dir, chave, nivel + 1);
 
-    } else {
-
-        printf("Chave %d encontrada no nivel %d.\n", chave, nivel);
-    }
+    } 
 }
 
 void preOrdem(No* raiz) {
@@ -255,4 +253,26 @@ void somaPorNivel(No* raiz, int* soma, int nivel) {
 
         somaPorNivel(raiz->dir, soma, nivel + 1);
     }
+}
+
+void imprimirArvore(No* raiz, int espaco) {
+
+    if (raiz == NULL)
+        return;
+
+    int incremento = 5;
+
+    espaco += incremento;
+
+   
+    imprimirArvore(raiz->dir, espaco);
+
+    printf("\n");
+
+    for (int i = incremento; i < espaco; i++)
+        printf(" ");
+
+    printf("%d\n", raiz->chave);
+
+    imprimirArvore(raiz->esq, espaco);
 }
