@@ -35,97 +35,60 @@ int main() {
             case 2:
 
                 if (raiz == NULL) {
-
-                    printf("A arvore esta vazia. Nada para procurar.\n");
+                     printf("A arvore esta vazia. Nada para procurar.\n");
 
                 } else {
-
                     printf("Digite a chave: ");
                     scanf("%d", &chave);
-
                     procurarNo(raiz, chave, 1);
                 }
 
             break;
 
             case 3:
-
                 if (raiz == NULL) {
-
                     printf("A arvore esta vazia. Nada para remover.\n");
-
                 } else {
-
                     printf("Digite a chave: ");
                     scanf("%d", &chave);
-
                     raiz = removerNo(raiz, chave);
                 }
-
             break;
-
             case 4:
-
                 if (raiz == NULL) {
-
                     printf("A arvore esta vazia. Nada para mostrar.\n");
-
                 } else {
-
                     printf("Arvore em pre-ordem: ");
-
                     preOrdem(raiz);
-
                     printf("\n");
                 }
 
             break;
-
             case 5:
-
                 if (raiz == NULL) {
-
                     printf("A arvore esta vazia. Nao ha soma possivel.\n");
-
                 } else {
-
                     int soma[100] = {0};
-
                     somaPorNivel(raiz, soma, 0);
-
                     printf("Soma por nivel:\n");
-
                     for (int i = 0; i < 100 && soma[i] != 0; i++) {
-
                         printf("Nivel %d: %d\n", i, soma[i]);
                     }
                 }
 
             break;
-
             case 6:
-
                 if (raiz == NULL) {
-
                     printf("Arvore vazia. Nada para desenhar.\n");
-
                 } else {
-
                     printf("Arvore desenhada:\n");
-
                     imprimirArvore(raiz, 0);
                 }
-
             break;
-
             case 0:
-
                 printf("Saindo...\n");
-
             break;
-
             default:
-
                 printf("Opcao invalida!\n");
         }
 
