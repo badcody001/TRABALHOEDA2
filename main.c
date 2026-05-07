@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "funcoes.h"
 #include "estruturas.h"
@@ -19,44 +19,65 @@ int main() {
         scanf("%d", &opcao);
 
         switch(opcao) {
+
             case 1:
                 raiz = inserirNo(raiz);
                 break;
 
-            case 2:
-                printf("Digite a chave: ");
-                scanf("%d", &chave);
-                procurarNo(raiz, chave, 1);
-                break;
+            case 2: if (raiz == NULL) {
+                    printf(" Arvore  vazia.\n");
+                } else {
+                    printf("Digite a chave: ");
+                    scanf("%d", &chave);
+                    procurarNo(raiz, chave, 1);
+                }
+            break;
 
             case 3:
+            if (raiz == NULL) {
+                printf("Arvore vazia.\n");
+            } else {
                 printf("Digite a chave: ");
                 scanf("%d", &chave);
                 raiz = removerNo(raiz, chave);
-                break;
+            }
+            break;
 
-            case 4:
-                printf("Arvore em pre-ordem: ");
-                preOrdem(raiz);
-                printf("\n");
-                break;
+               case 4:
+                if (raiz == NULL) {
+                    printf("A arvore esta vazia.\n");
+                } else {
+                    printf("Arvore em pre-ordem: ");
+                    preOrdem(raiz);
+                    printf("\n");
+                }
+            break;
 
-            case 5:
-             
-                int soma[100] = {0};
+
+            case 5: 
+            if (raiz == NULL) {
+                printf("A arvore esta vazia.\n");
+            } else  
+            {    int soma[100] = {0};
+
                 somaPorNivel(raiz, soma, 0);
+
                 printf("Soma por nivel:\n");
+
                 for (int i = 0; i < 100 && soma[i] != 0; i++) {
                     printf("Nivel %d: %d\n", i, soma[i]);
                 }
-               
-                break;
 
-            case 0:
-                printf("Saindo...\n");
                 break;
+            }
+ case 0:
+
+                printf("Saindo...\n");
+
+            break;
 
             default:
+
                 printf("Opcao invalida!\n");
         }
 
@@ -64,3 +85,4 @@ int main() {
 
     return 0;
 }
+
