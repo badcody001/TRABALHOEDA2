@@ -4,12 +4,6 @@
 #include "funcoes.h"        
 
 
-typedef struct No {
-    int chave;
-    int altura;
-    struct No* esq;
-    struct No* dir;
-} No;
 
 int altura(No* no) {
     if (no == NULL)
