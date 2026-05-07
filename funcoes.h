@@ -25,5 +25,6 @@ int fatorBalanceamento(No* no);
 No* rotacaoDireita(No* y);
 No* rotacaoEsquerda(No* x);
 
+void imprimirArvore(No* raiz, int espaco);
 #endif
 

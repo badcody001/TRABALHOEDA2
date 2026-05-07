@@ -14,6 +14,7 @@ int main() {
         printf("3. Remover no\n");
         printf("4. Exibir em pre-ordem\n");
         printf("5. Soma por nivel\n");
+        printf("6. Imprimir Arvore\n");
         printf("0. Sair\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
@@ -50,6 +51,12 @@ int main() {
                     printf("Nivel %d: %d\n", i, soma[i]);
                 }
                
+                break;
+            
+            case 6:
+                printf("Arvore desenhada:\n");
+                imprimirArvore(raiz, 0);
+                
                 break;
 
             case 0:
