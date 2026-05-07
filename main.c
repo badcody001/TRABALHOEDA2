@@ -25,38 +25,64 @@ int main() {
                 break;
 
             case 2:
-                printf("Digite a chave: ");
-                scanf("%d", &chave);
-                procurarNo(raiz, chave, 1);
+
+                if (raiz == NULL) {
+                    printf("A arvore esta vazia. Nada para procurar.\n");
+                } else {
+                    printf("Digite a chave: ");
+                    scanf("%d", &chave);
+                    procurarNo(raiz, chave, 1);
+                }
                 break;
 
             case 3:
-                printf("Digite a chave: ");
-                scanf("%d", &chave);
-                raiz = removerNo(raiz, chave);
+
+             if (raiz == NULL) {
+                    printf("A arvore esta vazia. Nada para remover.\n");
+                } else {
+                    printf("Digite a chave: ");
+                    scanf("%d", &chave);
+                    raiz = removerNo(raiz, chave);
+                }
+
                 break;
 
             case 4:
-                printf("Arvore em pre-ordem: ");
-                preOrdem(raiz);
-                printf("\n");
+
+                if (raiz == NULL) {
+                    printf("A arvore esta vazia. Nada para mostrar.\n");
+                } else {
+                    printf("Arvore em pre-ordem: ");
+                    preOrdem(raiz);
+                    printf("\n");
+                }
+
                 break;
 
             case 5:
-             
-                int soma[100] = {0};
-                somaPorNivel(raiz, soma, 0);
-                printf("Soma por nivel:\n");
-                for (int i = 0; i < 100 && soma[i] != 0; i++) {
-                    printf("Nivel %d: %d\n", i, soma[i]);
+                
+                 if (raiz == NULL) {
+                    printf("A arvore esta vazia. Nao ha soma possivel.\n");
+                } else {
+                    int soma[100] = {0};
+                    somaPorNivel(raiz, soma, 0);
+                    printf("Soma por nivel:\n");
+                    for (int i = 0; i < 100 && soma[i] != 0; i++) {
+                        printf("Nivel %d: %d\n", i, soma[i]);
+                    }
                 }
-               
+
                 break;
             
             case 6:
-                printf("Arvore desenhada:\n");
-                imprimirArvore(raiz, 0);
-                
+
+                 if (raiz == NULL) {
+                printf("Arvore vazia. Nada para desenhar.\n");
+                } else {
+                 printf("Arvore desenhada:\n");
+                 imprimirArvore(raiz, 0);
+                }
+
                 break;
 
             case 0:
